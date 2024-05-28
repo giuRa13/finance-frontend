@@ -15,7 +15,7 @@ const Navbar = (props: Props) => {
           <Link to="/">
             <div className='flex justify-center'>
               <img src={waveSvg} alt="" />
-              <span className='font-bold text-xl text-green font-audiowide'> Finance App</span>
+              <span className='font-bold text-xl text-green font-audiowide'> Wave Finance</span>
             </div>
           </Link>
           </div>
