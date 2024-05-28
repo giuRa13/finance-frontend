@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import { CompanyProfile } from '../../company';
+import { CompanyProfileData } from '../../company';
 import { getCompanyProfile } from '../../api';
 import Sidebar from '../../Components/Sidebar/Sidebar';
 import CompanyDashboard from '../../Components/CompanyDashboard/CompanyDashboard';
@@ -11,7 +11,7 @@ interface Props {}
 const CompanyPage = (props: Props) => {
 
   let { ticker } = useParams();
-  const [company, setCompany] = useState<CompanyProfile>();
+  const [company, setCompany] = useState<CompanyProfileData>();
 
   useEffect(() => {
     const getProfileInit = async () => {
@@ -29,8 +29,11 @@ const CompanyPage = (props: Props) => {
 
     <Sidebar/>
 
-    <CompanyDashboard>
-      <Tile title="Company name" subTitle={company.companyName}/>
+    <CompanyDashboard ticker={ticker!}>
+      <Tile title="Company name" 
+        subTitle={company.companyName} 
+        symbol={company.symbol} 
+        logo={company.image}/>
     </CompanyDashboard>
 
     </div>

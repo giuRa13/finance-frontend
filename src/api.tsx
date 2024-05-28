@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CompanyProfile, CompanySearch } from "./company";
+import { CompanyKeyMetrics, CompanyProfileData, CompanySearch } from "./company";
 
 interface SearchResponse {
     data: CompanySearch[];
@@ -27,8 +27,21 @@ export const searchCompanies = async (query: string) => {
 
 export const getCompanyProfile = async (query: string) => {
     try{
-        const data = await axios.get<CompanyProfile[]>(
+        const data = await axios.get<CompanyProfileData[]>(
             `https://financialmodelingprep.com/api/v3/profile/${query}?apikey=vTzirAVlYuLErLtb6lcjwcW3cybPTTBk&limit=10&exchange=NASDAQ`
+        );
+        return data;      
+    } 
+    catch(error: any){
+        console.log("ERROR>>> ", error.message);     
+    }
+};
+
+
+export const getKeyMetrics = async (query: string) => {
+    try{
+        const data = await axios.get<CompanyKeyMetrics[]>(
+            `https://financialmodelingprep.com/api/v3/key-metrics-ttm/${query}?apikey=vTzirAVlYuLErLtb6lcjwcW3cybPTTBk&limit=10&exchange=NASDAQ`
         );
         return data;      
     } 

@@ -3,9 +3,11 @@ import React from 'react'
 type Props = {
     title: string;
     subTitle: string;
+    logo: string;
+    symbol: string,
 }
 
-const Tile = ({title, subTitle}: Props) => {
+const Tile = ({title, subTitle, logo, symbol}: Props) => {
   return (
     <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
         <div className="relative flex flex-col min-w-0 break-words bg-white rounded-lg mb-6 xl:mb-0 shadow-lg">
@@ -15,7 +17,12 @@ const Tile = ({title, subTitle}: Props) => {
                         <h5 className="text-blue2 uppercase font-bold text-xs">
                             {title}
                         </h5>
-                        <span className="font-bold text-md">{subTitle}</span>
+                        <div className='flex items-center'>
+                            <span className="font-bold text-md justify-start">{subTitle}</span>
+                            <span className="font-bold uppercase justify-start">({symbol})</span>
+                            <img src={logo} alt='image'
+                            className='w-[15%] h-[15%] ml-auto'/>
+                        </div>
                     </div>
                 </div>
             </div>
