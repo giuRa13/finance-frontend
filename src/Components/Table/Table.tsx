@@ -52,8 +52,8 @@ const renderHeader = configs.map((configs:any)=> {
 
   return (
     <div className='shadow rounded-lg p-4 sm:p-6 xl:p-8'>
-        <table>
-            <thead className='min-w-full divide-y divide=blue2 m-5'>
+        <table className='min-w-full divide-y divide=blue2 m-5'>
+            <thead className="bg-gray-50 w-full">
                 {renderHeader}
             </thead>
             <tbody>{renderRows}</tbody>
