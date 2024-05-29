@@ -5,6 +5,9 @@ import { getCompanyProfile } from '../../api';
 import Sidebar from '../../Components/Sidebar/Sidebar';
 import CompanyDashboard from '../../Components/CompanyDashboard/CompanyDashboard';
 import Tile from '../../Components/Tile/Tile';
+import CompanyProfile from '../../Components/CompanyProfile/CompanyProfile';
+import RatioList from '../../Components/RatioList/RatioList';
+import SimpleTile from '../../Components/Tile/SimpleTile';
 
 interface Props {}
 
@@ -12,6 +15,7 @@ const CompanyPage = (props: Props) => {
 
   let { ticker } = useParams();
   const [company, setCompany] = useState<CompanyProfileData>();
+
 
   useEffect(() => {
     const getProfileInit = async () => {
@@ -21,7 +25,7 @@ const CompanyPage = (props: Props) => {
     };
     getProfileInit();
   }, []);
-//<img src={company.image} alt='image'></img>
+
   return (
     <>
     {company? (
@@ -34,7 +38,16 @@ const CompanyPage = (props: Props) => {
         subTitle={company.companyName} 
         symbol={company.symbol} 
         logo={company.image}/>
+      <SimpleTile title='Price' subTitle={company.price.toString()}/>
+      <SimpleTile title='Sector' subTitle={company.sector}/>
+      <SimpleTile title='Country' subTitle={company.country}/>
+      <p className='shadow-lg rounded-lg text-medium text-grey p-3 mt-1 m-4'>
+        {company.description}
+      </p>
+
     </CompanyDashboard>
+
+    
 
     </div>
     ) : (

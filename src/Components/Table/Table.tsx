@@ -1,3 +1,5 @@
+import "./Table.css";
+
 type Props = {
     data: any;
     config: any;
@@ -27,7 +29,7 @@ const Table = ({data, config}: Props) => {
 const renderHeader = config.map((configs:any)=> {
     return (
         <th key={configs.label}
-        className='p-4 text-left text-xs font-medium text-blue2 uppercase tracking-wider'
+        className='p-4 text-left text-xs font-medium text-green uppercase tracking-wider'
         >
             {configs.label}
         </th>
@@ -37,9 +39,9 @@ const renderHeader = config.map((configs:any)=> {
 
 
   return (
-    <div className='shadow rounded-lg p-4 sm:p-6 xl:p-8'>
-        <table className='min-w-full divide-y divide=blue2 m-5'>
-            <thead className="bg-gray-50 w-full">
+    <div className='shadow-lg rounded-lg p-4 sm:p-6 xl:p-8'>
+        <table className='min-w-full m-5'>
+            <thead className="bg-blue2 w-full">
                 {renderHeader}
             </thead>
             <tbody>{renderRows}</tbody>

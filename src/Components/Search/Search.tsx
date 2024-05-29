@@ -19,7 +19,7 @@ const Search : React.FC<Props> = ({onSearchSubmit, search, handleSearchChange}: 
         >
           <input
             className="flex-1 p-3 border-2 border-green rounded-lg placeholder-black 
-            bg-grey focus:outline-none"
+            bg-lightgrey focus:outline-none"
             id="search-input"
             placeholder='Search...'
             value={search}

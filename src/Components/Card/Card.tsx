@@ -15,9 +15,9 @@ interface Props {
 const Card : React.FC<Props> = ({id, searchResult, onPortfolioCreate}: Props) : React.JSX.Element => {
   return (
     <div className=' flex flex-col items-center justify-between w-full p-6 mt-2
-    bg-gray-100 rounded-lg md:flex-row card hover:opacity-65' key={id} id={id}>
+    bg-lightgrey rounded-lg md:flex-row card hover:opacity-65' key={id} id={id}>
            
-            <Link to={`/company/${searchResult.symbol}`} className="font-bold text-center md:text-left">
+            <Link to={`/company/${searchResult.symbol}/company-profile`} className="font-bold text-center md:text-left">
               {searchResult.name} ({searchResult.symbol})
             </Link>
             

@@ -32,6 +32,7 @@ export interface CompanySearch {
     address: string;
     city: string;
     state: string;
+    country: string;
     zip: string;
     dcfDiff: number;
     dcf: number;
