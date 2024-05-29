@@ -8,6 +8,7 @@ import Tile from '../../Components/Tile/Tile';
 import CompanyProfile from '../../Components/CompanyProfile/CompanyProfile';
 import RatioList from '../../Components/RatioList/RatioList';
 import SimpleTile from '../../Components/Tile/SimpleTile';
+import Spinner from '../../Components/Spinner/Spinner';
 
 interface Props {}
 
@@ -52,7 +53,7 @@ const CompanyPage = (props: Props) => {
     </div>
     ) : (
 
-      <div>Company not found</div>
+      <Spinner/>
     )}
     </>
   )
