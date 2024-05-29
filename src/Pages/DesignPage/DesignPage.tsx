@@ -18,7 +18,7 @@ const DesignPage = (props: Props) => {
         <h1>Design Page</h1>
         <h2>this is Wave Finance's Desingn Page</h2>
         <RatioList data={testIncomeStatementData} config={tableConfig}/>
-        <Table/>
+        <Table data={testIncomeStatementData} config={tableConfig}/>
     </>
   )
 }
