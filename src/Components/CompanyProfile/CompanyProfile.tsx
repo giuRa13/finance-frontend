@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { CompanyBalanceSheet, CompanyCashFlow, CompanyKeyMetrics, CompanyProfileData } from '../../company';
+import {  CompanyProfileData } from '../../company';
 import { useOutletContext } from 'react-router-dom';
-import { getKeyMetrics } from '../../api';
 import { getCompanyProfile } from '../../api';
 import RatioList from '../RatioList/RatioList';
 import Spinner from '../Spinner/Spinner';
+import LiveChart from '../Chart/LiveChart';
 
 interface Props {}
 
@@ -217,7 +217,9 @@ const tableConfig = [
   return <>
   {companyData ? (
     <>
+      <LiveChart symbol={ticker}/>
       <RatioList data={companyData} config={tableConfig}/>
+      
     </>
   ) : (
 

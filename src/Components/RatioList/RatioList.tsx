@@ -8,7 +8,7 @@ type Props = {
 const RatioList = ({config, data}: Props) => {
     const renderCells = config.map((row: any) => {
         return (
-            <li className='p-3 sm:py-4'>
+            <li key={row.label} className='p-3 sm:py-4'>
                 <div className='flex items-center justify-between space-x-0 md:space-x-40'>
                     <div className='flex-1 min-w-0'>
                         <p className='text-sm font-medium text-blue2 truncate'>

@@ -5,8 +5,6 @@ import { getCompanyProfile } from '../../api';
 import Sidebar from '../../Components/Sidebar/Sidebar';
 import CompanyDashboard from '../../Components/CompanyDashboard/CompanyDashboard';
 import Tile from '../../Components/Tile/Tile';
-import CompanyProfile from '../../Components/CompanyProfile/CompanyProfile';
-import RatioList from '../../Components/RatioList/RatioList';
 import SimpleTile from '../../Components/Tile/SimpleTile';
 import Spinner from '../../Components/Spinner/Spinner';
 
@@ -42,6 +40,7 @@ const CompanyPage = (props: Props) => {
       <SimpleTile title='Price' subTitle={company.price.toString()}/>
       <SimpleTile title='Sector' subTitle={company.sector}/>
       <SimpleTile title='Country' subTitle={company.country}/>
+
       <p className='shadow-lg rounded-lg text-medium text-grey p-3 mt-1 m-4'>
         {company.description}
       </p>

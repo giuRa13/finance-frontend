@@ -10,10 +10,11 @@ type Props = {
 const Table = ({data, config}: Props) => {
     const renderRows = data.map((company: any) => {
         return (
-            <tr key={company.cik}>
+          
+            <tr key={company.revenue}>
                 {config.map((val: any) => {
                     return (
-                        <td className='p-4 whitespace-nowrap text-sm text-darkgrey
+                        <td  className='p-4 whitespace-nowrap text-sm text-darkgrey
                         font-normal'>
                             {val.render(company)}
                         </td>
@@ -23,17 +24,20 @@ const Table = ({data, config}: Props) => {
                 font-normal'>                  
                 </td>
             </tr>
+            
         );
     });
 
 const renderHeader = config.map((configs:any)=> {
     return (
+   
         <th key={configs.label}
         className='p-4 text-left text-xs font-medium text-green uppercase tracking-wider'
         >
             {configs.label}
         </th>
-    )
+   
+        )
 })
 
 

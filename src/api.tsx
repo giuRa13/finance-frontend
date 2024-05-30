@@ -88,3 +88,16 @@ export const getCashFlow = async (query: string) => {
         console.log("ERROR>>> ", error.message);     
     }
 };
+
+
+/*export const getChartData = async (query: string) => {
+    try{
+        const data = await axios.get<CompanyChartData[]>(
+            `https://financialmodelingprep.com/api/v3/historical-price-full/${query}?apikey=vTzirAVlYuLErLtb6lcjwcW3cybPTTBk&limit=40&exchange=NASDAQ`
+        );
+        return data;      
+    } 
+    catch(error: any){
+        console.log("ERROR>>> ", error.message);     
+    }
+};*/
