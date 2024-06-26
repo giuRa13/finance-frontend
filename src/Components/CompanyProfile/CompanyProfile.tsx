@@ -5,6 +5,7 @@ import { getCompanyProfile } from '../../api';
 import RatioList from '../RatioList/RatioList';
 import Spinner from '../Spinner/Spinner';
 import LiveChart from '../Chart/LiveChart';
+import { Link } from 'react-router-dom';
 
 interface Props {}
 
@@ -150,7 +151,9 @@ interface Props {}
 const tableConfig = [
   {
     label: "Market Cap",
-    render: (company: CompanyProfileData) => company.mktCap,
+    render: (company: CompanyProfileData) => 
+      new Intl.NumberFormat('en-IN', 
+      { style: 'currency', currency: 'USD' }).format(company.mktCap),
   },
   {
     label: "Isin",
@@ -182,7 +185,7 @@ const tableConfig = [
   },
   {
     label: "Website",
-    render: (company: CompanyProfileData) => company.website,
+    render: (company: CompanyProfileData) => <Link className='text-blue2 hover:text-green underline' to={company.website} target={"_blank"}>{company.website}</Link>,
   },
 ];
 

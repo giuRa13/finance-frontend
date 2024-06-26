@@ -37,7 +37,11 @@ const CompanyPage = (props: Props) => {
         subTitle={company.companyName} 
         symbol={company.symbol} 
         logo={company.image}/>
-      <SimpleTile title='Price' subTitle={company.price.toString()}/>
+
+      <SimpleTile title='Price' 
+        subTitle={ new Intl.NumberFormat('en-IN', 
+        { style: 'currency', currency: 'USD' }).format(company.price) }/>
+
       <SimpleTile title='Sector' subTitle={company.sector}/>
       <SimpleTile title='Country' subTitle={company.country}/>
 

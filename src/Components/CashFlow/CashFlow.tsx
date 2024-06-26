@@ -14,33 +14,40 @@ const configs = [
     },
     {
       label: "Operating Cashflow",
-      render: (company: CompanyCashFlow) => company.operatingCashFlow,
+      render: (company: CompanyCashFlow) => new Intl.NumberFormat('en-IN', 
+      { style: 'currency', currency: 'USD', maximumSignificantDigits: 3 }).format(company.operatingCashFlow),
     },
     {
       label: "Investing Cashflow",
       render: (company: CompanyCashFlow) =>
-        company.netCashUsedForInvestingActivites,
+        new Intl.NumberFormat('en-IN', 
+      { style: 'currency', currency: 'USD', maximumSignificantDigits: 3 }).format(company.netCashUsedForInvestingActivites),
     },
     {
       label: "Financing Cashflow",
       render: (company: CompanyCashFlow) =>
-        company.netCashUsedProvidedByFinancingActivities,
+        new Intl.NumberFormat('en-IN', 
+      { style: 'currency', currency: 'USD', maximumSignificantDigits: 3 }).format(company.netCashUsedProvidedByFinancingActivities),
     },
     {
       label: "Cash At End of Period",
-      render: (company: CompanyCashFlow) => company.cashAtEndOfPeriod,
+      render: (company: CompanyCashFlow) => new Intl.NumberFormat('en-IN', 
+      { style: 'currency', currency: 'USD', maximumSignificantDigits: 3 }).format(company.cashAtEndOfPeriod),
     },
     {
       label: "CapEX",
-      render: (company: CompanyCashFlow) => company.capitalExpenditure,
+      render: (company: CompanyCashFlow) => new Intl.NumberFormat('en-IN', 
+      { style: 'currency', currency: 'USD', maximumSignificantDigits: 3 }).format(company.capitalExpenditure),
     },
     {
       label: "Issuance Of Stock",
-      render: (company: CompanyCashFlow) => company.commonStockIssued,
+      render: (company: CompanyCashFlow) => new Intl.NumberFormat('en-IN', 
+      { style: 'currency', currency: 'USD', maximumSignificantDigits: 3 }).format(company.commonStockIssued),
     },
     {
       label: "Free Cash Flow",
-      render: (company: CompanyCashFlow) => company.freeCashFlow,
+      render: (company: CompanyCashFlow) => new Intl.NumberFormat('en-IN', 
+      { style: 'currency', currency: 'USD', maximumSignificantDigits: 3 }).format(company.freeCashFlow),
     },
   ];
 

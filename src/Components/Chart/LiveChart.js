@@ -32,7 +32,7 @@ const LiveChart = ({symbol}) => {
         },
         chart: {
             type: "candlestick",
-            heigth: 1000,
+            heigth: 800,
             id: "candles"          
         },
         title: {

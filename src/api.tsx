@@ -1,7 +1,14 @@
 import axios from "axios";
-import { CompanyBalanceSheet, CompanyCashFlow, CompanyIncomeStatement, CompanyKeyMetrics, CompanyProfileData, CompanySearch } from "./company";
+import { CompanyBalanceSheet, 
+    CompanyCashFlow, 
+    CompanyHistoricalDividend, 
+    CompanyIncomeStatement, 
+    CompanyKeyMetrics, 
+    CompanyProfileData, 
+    CompanySearch, 
+    Dividend } from "./company";
 
-interface SearchResponse {
+export interface SearchResponse {
     data: CompanySearch[];
 }
 
@@ -10,7 +17,7 @@ interface SearchResponse {
 export const searchCompanies = async (query: string) => {
     try{
         const data = await axios.get<SearchResponse>(
-            `https://financialmodelingprep.com/api/v3/search?query=${query}&apikey=vTzirAVlYuLErLtb6lcjwcW3cybPTTBk&limit=10&exchange=NASDAQ`
+            `https://financialmodelingprep.com/api/v3/search?query=${query}&apikey=${process.env.REACT_APP_API_KEY}&limit=10&exchange=NASDAQ`
         );
         return data;      
     } catch(error){
@@ -28,7 +35,7 @@ export const searchCompanies = async (query: string) => {
 export const getCompanyProfile = async (query: string) => {
     try{
         const data = await axios.get<CompanyProfileData[]>(
-            `https://financialmodelingprep.com/api/v3/profile/${query}?apikey=vTzirAVlYuLErLtb6lcjwcW3cybPTTBk&limit=10&exchange=NASDAQ`
+            `https://financialmodelingprep.com/api/v3/profile/${query}?apikey=${process.env.REACT_APP_API_KEY}&limit=10&exchange=NASDAQ`
         );
         return data;      
     } 
@@ -41,7 +48,7 @@ export const getCompanyProfile = async (query: string) => {
 export const getKeyMetrics = async (query: string) => {
     try{
         const data = await axios.get<CompanyKeyMetrics[]>(
-            `https://financialmodelingprep.com/api/v3/key-metrics-ttm/${query}?apikey=vTzirAVlYuLErLtb6lcjwcW3cybPTTBk&limit=10&exchange=NASDAQ`
+            `https://financialmodelingprep.com/api/v3/key-metrics-ttm/${query}?apikey=${process.env.REACT_APP_API_KEY}&limit=10&exchange=NASDAQ`
         );
         return data;      
     } 
@@ -54,7 +61,7 @@ export const getKeyMetrics = async (query: string) => {
 export const getIncomeStatement = async (query: string) => {
     try{
         const data = await axios.get<CompanyIncomeStatement[]>(
-            `https://financialmodelingprep.com/api/v3/income-statement/${query}?apikey=vTzirAVlYuLErLtb6lcjwcW3cybPTTBk&limit=40&exchange=NASDAQ`
+            `https://financialmodelingprep.com/api/v3/income-statement/${query}?apikey=${process.env.REACT_APP_API_KEY}&limit=40&exchange=NASDAQ`
         );
         return data;      
     } 
@@ -67,7 +74,7 @@ export const getIncomeStatement = async (query: string) => {
 export const getBalanceSheet = async (query: string) => {
     try{
         const data = await axios.get<CompanyBalanceSheet[]>(
-            `https://financialmodelingprep.com/api/v3/balance-sheet-statement/${query}?apikey=vTzirAVlYuLErLtb6lcjwcW3cybPTTBk&limit=40&exchange=NASDAQ`
+            `https://financialmodelingprep.com/api/v3/balance-sheet-statement/${query}?apikey=${process.env.REACT_APP_API_KEY}&limit=40&exchange=NASDAQ`
         );
         return data;      
     } 
@@ -80,7 +87,7 @@ export const getBalanceSheet = async (query: string) => {
 export const getCashFlow = async (query: string) => {
     try{
         const data = await axios.get<CompanyCashFlow[]>(
-            `https://financialmodelingprep.com/api/v3/cash-flow-statement/${query}?apikey=vTzirAVlYuLErLtb6lcjwcW3cybPTTBk&limit=40&exchange=NASDAQ`
+            `https://financialmodelingprep.com/api/v3/cash-flow-statement/${query}?apikey=${process.env.REACT_APP_API_KEY}&limit=40&exchange=NASDAQ`
         );
         return data;      
     } 
@@ -101,3 +108,15 @@ export const getCashFlow = async (query: string) => {
         console.log("ERROR>>> ", error.message);     
     }
 };*/
+
+
+export const getHistoricalDividend = async (query: string) => {
+    try {
+      const data = await axios.get<CompanyHistoricalDividend>(
+        `https://financialmodelingprep.com/api/v3/historical-price-full/stock_dividend/${query}?apikey=${process.env.REACT_APP_API_KEY}`
+      );
+      return data;
+    } catch (error: any) {
+      console.log("error message: ", error.message);
+    }
+  };

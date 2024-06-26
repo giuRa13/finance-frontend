@@ -2,16 +2,24 @@ import { Outlet } from 'react-router';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import { UserProvider } from './Context/useAuth';
 
 function App() {
 
   return (
     <>
-    <Navbar/>
+    <div id='App'>
+      <UserProvider>
 
-    <Outlet/>
-
-    <Footer/>
+        <Navbar/>
+        <Outlet/>
+        <ToastContainer/>
+        <Footer/>
+        
+      </UserProvider>
+    </div>
     </>
   );
 }

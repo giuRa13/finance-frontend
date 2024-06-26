@@ -4,6 +4,7 @@ import { FaHome } from "react-icons/fa";
 import { GiCash } from "react-icons/gi";
 import { FaScaleBalanced } from "react-icons/fa6";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
+import { FaChartLine } from "react-icons/fa6";
 
 interface Props {}
 
@@ -21,27 +22,33 @@ const Sidebar = (props: Props) => {
         <div className="md:flex-col md:min-w-full flex flex-col list-none mt-6">    
           <Link to="company-profile" 
           className="flex items-center md:min-w-full text-blue2 text-sm uppercase font-bold block pt-1 pb-4 no-underline 
-           hover:text-green focus:text-green selection:text-green">
+           hover:text-green focus:text-green selection:text-green active:text-green">
             <FaHome className='text-md'/>
             <h6 className='ml-3'>Company Profile</h6>
           </Link>
           <Link to="income-statement" 
-          className="flex items-center md:min-w-full text-blue2 text-sm uppercase font-bold block pt-1 pb-4 no-underline
-          hover:text-green focus:text-green selection:text-green">
+          className="flex mt-4 items-center md:min-w-full text-blue2 text-sm uppercase font-bold block pt-1 pb-4 no-underline
+          hover:text-green focus:text-green selection:text-green active:text-green">
             <GiCash className='text-md'/>
             <h6 className='ml-3'>Income Statement</h6>
           </Link>
           <Link to="balance-sheet" 
-          className="flex items-center md:min-w-full text-blue2 text-sm uppercase font-bold block pt-1 pb-4 no-underline
-          hover:text-green focus:text-green selection:text-green">
+          className="flex mt-4 items-center md:min-w-full text-blue2 text-sm uppercase font-bold block pt-1 pb-4 no-underline
+          hover:text-green focus:text-green selection:text-green active:text-green">
             <FaScaleBalanced className='text-md'/>
             <h6 className='ml-3'>Balance Sheet</h6>
           </Link>
           <Link to="cashflow-statement" 
-          className="flex items-center md:min-w-full text-blue2 text-sm uppercase font-bold block pt-1 pb-4 no-underline
-          hover:text-green focus:text-green selection:text-green">
+          className="flex mt-4 items-center md:min-w-full text-blue2 text-sm uppercase font-bold block pt-1 pb-4 no-underline
+          hover:text-green focus:text-green selection:text-green active:text-green">
             <FaArrowRightArrowLeft className='text-md'/>
             <h6 className='ml-3'>Cashflow Statement</h6>
+          </Link>
+          <Link to="historical-dividend" 
+          className="flex mt-4 items-center md:min-w-full text-blue2 text-sm uppercase font-bold block pt-1 pb-4 no-underline
+          hover:text-green focus:text-green selection:text-green active:text-green">
+            <FaChartLine className='text-md'/>
+            <h6 className='ml-3'>Historical Dividend</h6>
           </Link>
           </div>    
       </div>
