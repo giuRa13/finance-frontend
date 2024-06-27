@@ -12,10 +12,13 @@ function App() {
     <>
     <div id='App'>
       <UserProvider>
-
+      
         <Navbar/>
+        
         <Outlet/>
-        <ToastContainer/>
+
+        <ToastContainer theme="colored"/>
+        
         <Footer/>
         
       </UserProvider>
