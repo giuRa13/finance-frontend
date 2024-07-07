@@ -11,7 +11,7 @@ import CashFlow from "../Components/CashFlow/CashFlow";
 import HistoricalDividend from "../Components/HistoricalDividend/HistoricalDividend";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import RegisterPage from "../Pages/RegisterPage/RegisterPage";
-
+import ProtectedRoute from "./ProtectedRoute";
 
 
 export const router = createBrowserRouter([
@@ -19,50 +19,31 @@ export const router = createBrowserRouter([
         path: "/",
         element: <App/>,
         children:[
-            {
-                path: "",
-                element: <HomePage/>
+            { path: "", element: <HomePage/>},
+            { path: "login", element: <LoginPage/>},
+            { path: "register", element: <RegisterPage/>},
+            { path: "search", element:( 
+                <ProtectedRoute> 
+                    <SearchPage/> 
+                </ProtectedRoute>
+                )
             },
-            {
-                path: "login",
-                element: <LoginPage/>
-            },
-            {
-                path: "register",
-                element: <RegisterPage/>
-            },
-            {
-                path: "search",
-                element: <SearchPage/>
-            },
-            {
-                path: "design-page",
-                element: <DesignPage/>,
-            },
+            { path: "design-page", element: <DesignPage/>,},
             {
                 path: "company/:ticker",
-                element: <CompanyPage/>,
+                element: (
+                    <ProtectedRoute>
+                        <CompanyPage/>
+                    </ProtectedRoute>
+                ),
                 children:[
-                    {
-                        path: "company-profile",
-                        element: <CompanyProfile/>
-                    },
-                    {
-                        path: "income-statement",
-                        element: <IncomeStatement/>
-                    },
-                    {
-                        path: "balance-sheet",
-                        element: <BalanceSheet/>
-                    },
-                    {
-                        path: "cashflow-statement",
-                        element: <CashFlow/>
-                    },
+                    { path: "company-profile", element: <CompanyProfile/>},
+                    { path: "income-statement", element: <IncomeStatement/>},
+                    { path: "balance-sheet", element: <BalanceSheet/>},
+                    { path: "cashflow-statement", element: <CashFlow/>},
                     { path: "historical-dividend", element: <HistoricalDividend/> },
-
                 ],
             },
-        ]
+        ],
     }
 ])
