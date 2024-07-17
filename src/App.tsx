@@ -17,7 +17,7 @@ function App() {
         
         <Outlet/>
 
-        <ToastContainer theme="colored"/>
+        <ToastContainer theme="colored" position="top-center"/>
         
         <Footer/>
         

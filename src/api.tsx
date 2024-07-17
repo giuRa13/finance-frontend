@@ -17,7 +17,7 @@ export interface SearchResponse {
 export const searchCompanies = async (query: string) => {
     try{
         const data = await axios.get<SearchResponse>(
-            `https://financialmodelingprep.com/api/v3/search?query=${query}&apikey=${process.env.REACT_APP_API_KEY}&limit=10&exchange=NASDAQ`
+            `https://financialmodelingprep.com/api/v3/search?query=${query}&apikey=${process.env.REACT_APP_API_KEY}&limit=10&exchange=NASDAQ,NYSE,LSE,EURONEXT`
         );
         return data;      
     } catch(error){

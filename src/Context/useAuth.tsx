@@ -82,6 +82,7 @@ export const UserProvider = ({children} : Props) => {
         localStorage.removeItem("user");
         setUser(null);
         setToken("");
+        toast.success("Logout Success!",{style:{background: "#33cc66"}});
         navigate("/");
     }
 

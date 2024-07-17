@@ -12,9 +12,11 @@ const CardList : React.FC<Props>  = ({searchResult,onPortfolioCreate}: Props) : 
   return <>
   {searchResult.length > 0 ? (
     searchResult.map((result) => {
-      return <Card id={result.symbol} key={uuidv4()} 
+      return <div className='relative flex flex-col items-center justify-center'> 
+        <Card id={result.symbol} key={uuidv4()} 
         searchResult={result}
         onPortfolioCreate={onPortfolioCreate}/>
+        </div>
     })
   ) : (
 

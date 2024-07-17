@@ -1,12 +1,15 @@
 import React from 'react';
-import logo from "../../Assets/image.svg";
 import waveSvg from '../../Assets/wave.svg';
 import "./Navbar.css";
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../Context/useAuth';
 
 interface Props {}
 
 const Navbar = (props: Props) => {
+
+  const {isLoggedIn, user, logout} = useAuth();
+
   return (
     <nav className="relative mx-auto p-6 bg-blue2">
       <div className="flex items-center justify-between">
@@ -25,15 +28,27 @@ const Navbar = (props: Props) => {
             </Link>
           </div>
         </div>
-        <div className="hidden lg:flex items-center space-x-6 text-back">
-          <div className="text-gray-100 hover:text-green font-bold">Login</div>
-          <a
-            href=""
-            className="px-8 py-3 font-bold rounded-md text-blue2 bg-green hover:opacity-70"
-          >
-            Signup
-          </a>
+        { isLoggedIn() ? (
+          <div className="hidden lg:flex items-center space-x-6 text-back">
+            <div className="text-green hover:text-green font-bold">Welcome, {user?.userName}</div>
+            <a
+              onClick={logout}
+              className="px-8 py-3 font-bold rounded-md text-blue2 bg-green hover:opacity-70"
+            >
+              Logout
+            </a>
+          </div>
+        ) : (
+          <div className="hidden lg:flex items-center space-x-6 text-back">
+            <Link to="/login" className="text-gray-100 hover:text-green font-bold">
+              Login
+            </Link>
+            <Link to="/register"className="px-8 py-3 font-bold rounded-md text-blue2 bg-green hover:opacity-70">
+              Signup
+            </Link>
         </div>
+        )}
+
       </div>
     </nav>
   )

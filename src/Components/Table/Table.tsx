@@ -32,7 +32,7 @@ const renderHeader = config.map((configs:any)=> {
     return (
    
         <th key={configs.label}
-        className='p-4 text-left text-xs font-medium text-green uppercase tracking-wider'
+        className='p-4 text-left text-xs font-medium text-green uppercase tracking-wider '
         >
             {configs.label}
         </th>
@@ -44,7 +44,7 @@ const renderHeader = config.map((configs:any)=> {
 
   return (
     <div className='shadow-lg rounded-lg p-4 sm:p-6 xl:p-8'>
-        <table className='min-w-full m-5'>
+        <table className='min-w-full p-4'>
             <thead className="bg-blue2 w-full">
                 {renderHeader}
             </thead>

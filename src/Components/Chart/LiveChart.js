@@ -36,7 +36,7 @@ const LiveChart = ({symbol}) => {
             id: "candles"          
         },
         title: {
-            text: "CandleStick Chart",
+            text: "",
             align: "left",
         },
         xaxis: {

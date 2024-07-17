@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useAuth } from '../../Context/useAuth';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 type Props = {}
 
@@ -84,7 +85,9 @@ const RegisterPage = (props: Props) => {
                 type="password"
                 id="password"
                 placeholder="••••••••"
-                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className=" border border-gray-300 text-gray-900 sm:text-sm rounded-lg 
+                focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 
+                dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               {...register("password")}
               />
               {errors.password ? <p className='text-red'>{errors.password.message}</p> : ""}
@@ -104,13 +107,11 @@ const RegisterPage = (props: Props) => {
               Sign in
             </button>
             <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-              Don’t have an account yet?{" "}
-              <a
-                href="#"
-                className="font-medium text-green hover:underline dark:text-primary-500"
-              >
-                Sign up
-              </a>
+              Already have an account?{" "}
+              <Link to="/login"
+                className="font-medium text-green hover:underline dark:text-primary-500">
+                Login
+              </Link>
             </p>
           </form>
         </div>
