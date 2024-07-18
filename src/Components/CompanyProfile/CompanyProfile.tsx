@@ -6,6 +6,7 @@ import RatioList from '../RatioList/RatioList';
 import Spinner from '../Spinner/Spinner';
 import LiveChart from '../Chart/LiveChart';
 import { Link } from 'react-router-dom';
+import StockComment from '../StockComment/StockComment';
 
 interface Props {}
 
@@ -222,6 +223,7 @@ const tableConfig = [
     <>
       <LiveChart symbol={ticker}/>
       <RatioList data={companyData} config={tableConfig}/>
+      <StockComment stockSymbol={ticker}/>
       
     </>
   ) : (

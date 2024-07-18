@@ -23,7 +23,7 @@ const Hero = (props: Props) => {
             </Link>
           </div>
           <div className=" flex pt-20 text-4xl font-bold text-blue2 mt-20">
-            NASDAQ - NYSE - LSE - EURONEXT
+            NASDAQ | NYSE | LSE | EURONEXT
       </div>
         </div>
         <div className="mb-24 mx-auto md:w-180 md:px-10 lg:mb-0 lg:w-1/2">

@@ -25,7 +25,7 @@ const Search : React.FC<Props> = ({onSearchSubmit, search, handleSearchChange}: 
             value={search}
             onChange={handleSearchChange}
           ></input>
-          <img src={searchSvg} alt='search' className=' justify-center absolute right-3' />
+          <img src={searchSvg} alt='search' className=' justify-center absolute right-3' onClick={onSearchSubmit}/>
         </form>
       </div>
     </section>
