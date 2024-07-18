@@ -28,7 +28,7 @@ const StockCommentForm = ({symbol, handleComment}: Props) => {
     } = useForm<CommentFormInputs>({resolver: yupResolver(validation)});
 
   return (
-    <form className="mt-8 ml-8 w-[30%]" onSubmit={handleSubmit(handleComment)}>
+    <form className="mt-8 ml-8 w-full" onSubmit={handleSubmit(handleComment)}>
     <h2 className='text-blue2 text-lg font-semibold mb-4'>Leave a comment...</h2>
     <input
       type="text"
